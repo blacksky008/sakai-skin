@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "name": "Sakai Skin",
+  "version": "0.1",
+  "description": "Change the appearance of your portal! Make it look better!",
+  "icons": { "16": "icons/icon16.png",
+             "48": "icons/icon48.png",
+            "128": "icons/icon128.png" },
+  "default_locale": "en",
+
+  // http://code.google.com/chrome/extensions/pageAction.html
+  "page_action": {
+    "default_icon":  "icons/icon19.png",
+    "default_title": "Sakai Skin",
+    "default_popup": "src/popup.html"
+  },
+
+  // http://code.google.com/chrome/extensions/manifest.html#permissions
+  "permissions": [
+    "tabs", "https://sakai.claremont.edu/portal/*"
+  ],
+
+  // http://developer.chrome.com/chrome/extensions/optionsV2
+  // "options_page": "options.html",
+
+  "content_scripts": [
+    {
+      "matches": ["https://sakai.claremont.edu/portal/*"],
+      "css": ["src/style1.css"],
+      "js": ["src/contentScript.js"]
+    }
+  ]
+
+  // http://code.google.com/chrome/extensions/autoupdate.html */
+  // "update_url": "http://myhost.com/mytestextension/updates.xml"
+
+
+}
